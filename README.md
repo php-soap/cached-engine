@@ -16,7 +16,7 @@ Want more information about the future of this project? Check out this list of t
 You can choose what cache implementation you want to use.
 This package expects some PSR implementations to be present in order to be installed:
 
-* PSR-7: `psr/cache-implementation` like `symfony/cache` or `cache/*`
+* PSR-6: `psr/cache-implementation` like `symfony/cache` or `cache/*`
 
 Example:
 
