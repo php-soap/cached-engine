@@ -56,6 +56,9 @@ $engine = new CachedEngine(
 );
 ```
 
+**Note:** This driver doesn't work well with the `LazyEngine` because of its closures that cannot be serialized.
+Since this engine is already lazy, you can use it as a direct replacement.  
+
 ## Drivers
 
 This package provides drivers that can be used in a generic way:
@@ -78,5 +81,28 @@ $driver = new CachedDriver(
     static function (): Driver {
         return new YourSoapDriver();
     }
+);
+```
+
+Concrete example:
+
+```php
+use Soap\CachedEngine\CacheConfig;
+use Soap\CachedEngine\CachedDriver;
+use Soap\Encoding\Driver;
+use Soap\Wsdl\Loader\StreamWrapperLoader;
+use Soap\WsdlReader\Wsdl1Reader;
+use Symfony\Component\Cache\Adapter\RedisAdapter;
+
+$driver = new CachedDriver(
+    new RedisAdapter(
+        RedisAdapter::createConnection('redis://localhost')
+    ),
+    new CacheConfig('your-soap-driver', ttlInSeconds: 3600),
+    static fn() => Driver::createFromWsdl1(
+        (new Wsdl1Reader(
+            new StreamWrapperLoader()
+        ))($wsdlLocation)
+    )
 );
 ```
