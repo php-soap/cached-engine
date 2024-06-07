@@ -1,6 +1,7 @@
 # SOAP Cached Engine
 
-This package contains a cache wrapper for the SOAP engine.
+This package contains a cache wrapper for a SOAP engine.
+For more information about the engine, please check the [php-soap/engine](https://github.com/php-soap/engine) package.
 
 # Want to help out? 💚
 
