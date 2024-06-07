@@ -44,7 +44,7 @@ use Soap\CachedEngine\CacheConfig;
 use Soap\Engine\Engine;
 
 $engine = new CachedEngine(
-    $yourPsr6OrPsr16CachePool,
+    $yourPsr6CachePool,
     new CacheConfig(
         key: 'cached-engine',
         ttlInSeconds: 3600 
@@ -69,7 +69,7 @@ use Soap\CachedEngine\CacheConfig;
 use Soap\Driver\Driver;
 
 $driver = new CachedDriver(
-    $yourPsr6OrPsr16CachePool,
+    $yourPsr6CachePool,
     new CacheConfig(
         key: 'cached-engine',
         ttlInSeconds: 3600 
