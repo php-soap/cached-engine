@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "~8.4.0 || ~8.5.0",
+        "php": "~8.4.0 || ~8.5.0 || ~8.6.0",
         "php-soap/engine": "^2.20.0",
         "psr/cache": "^3.0",
         "psr/cache-implementation": "^3.0",
