@@ -31,6 +31,6 @@
         "phpunit/phpunit": "^13.4",
         "vimeo/psalm": "^7.12",
         "php-cs-fixer/shim": "^3.94",
-        "symfony/cache": "^7.0 || ^6.4"
+        "symfony/cache": "^8.1"
     }
 }
